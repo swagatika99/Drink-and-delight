@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+      http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+      http://www.springframework.org/schema/context 
+      http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+  <bean id="emp" class="com.cg.demo.Employee" autowire="byType" init-method="init" destroy-method="destroy"> 
+  
+  <property name="employeeid" value="1234"/>
+      <property name="firstname" value="Rushma"/>
+      <property name="lastname" value="Reddy"/>
+      <!--<property name="address" ref="add"/>  -->
+      <property name="jobs">
+      <list>
+      <value>Manager</value>
+      <value>Developer</value>
+      <value>testser</value>
+      <value>ceo</value>
+      </list>
+      </property>
+     <!--<constructor-arg name="employeeid" value="1234" />  
+  <constructor-arg name="firstname" value="Rushma" />   
+  <constructor-arg name="lastname" value="Reddy"/>
+  <constructor-arg name="address" ref="add"/>  --> 
+  </bean>
+  <bean id="add" class="com.cg.demo.Address">
+      <property name="areaName" value="GachiBowli"/>
+      <property name="city" value="Hyderabad"/>
+  </bean>
+</beans>
